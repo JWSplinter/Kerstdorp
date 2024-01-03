@@ -37,19 +37,18 @@ class KerstdorpSound:
 
         if self.minutes == 0:
             self.random_list() if xmas else None
-            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav&')
-            sleep(16)
-            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/bigbenstrikes{self.hours}.wav&')
+            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav')
+            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/bigbenstrikes{self.hours}.wav')
 
         elif self.minutes == 30 and self.month_day != '1-1':
-            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav&')
+            system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav')
 
         elif self.minutes == 30 and self.month_day == '1-1':
-            system(f'aplay -D hw:2,0 {WORK_DIR}NewYear/happynewyear.wav&')
+            system(f'aplay -D hw:2,0 {WORK_DIR}NewYear/happynewyear.wav')
 
         elif self.minutes in self.random_minutes_list:
             xmas_number = randint(0, 4)
-            system(f'aplay -D hw:2,0 {WORK_DIR}Xmas/{XMAS_LIST[xmas_number]}.wav&')
+            system(f'aplay -D hw:2,0 {WORK_DIR}Xmas/{XMAS_LIST[xmas_number]}.wav')
     
         sleep (61)
 
