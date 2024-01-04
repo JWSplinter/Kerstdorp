@@ -15,6 +15,7 @@ class KerstdorpSound:
         '''Bepaald de aantal minuten van actuele tijd'''
 
         self.hours = datetime.today().hour
+        self.hours = self.hours - 12 if self.hours > 12 else self.hours
         self.minutes = datetime.today().minute
         self.month_day = f'{datetime.today().month}-{datetime.today().day}'
 
@@ -35,7 +36,7 @@ class KerstdorpSound:
 
         xmas = True if self.month_day in PARTY_LIST else False
 
-        if self.minutes == 0:
+        if self.minutes != 0:
             self.random_list() if xmas else None
             system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav')
             system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/bigbenstrikes{self.hours}.wav')
@@ -50,7 +51,7 @@ class KerstdorpSound:
             xmas_number = randint(0, 4)
             system(f'aplay -D hw:2,0 {WORK_DIR}Xmas/{XMAS_LIST[xmas_number]}.wav')
     
-        sleep (61)
+        sleep (60)
 
 
 def main():
