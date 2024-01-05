@@ -10,13 +10,13 @@ Verder aandacht voor aplay deze werkt ook anders als service. De volgende optie 
 - De service kan met volgende commando bewerkt worden
 sudo nano /etc/systemd/system/bigben.service
 
-- Service starten
-sudo systemctl start bigben.service
-
-- Controle of de service functioneerd
-sudo systemctl status bigben.service
+- Service starten tijdens boot proces
+sudo systemctl enable bigben.service
 
 - Commando service starten tijdens opstarten
+sudo systemctl start bigben.service
+
+- Controle of de service functioneert
 sudo systemctl status bigben.service
 
 ## Huidige service bigben
