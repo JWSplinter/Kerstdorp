@@ -20,14 +20,14 @@ sudo systemctl start bigben.service
 sudo systemctl status bigben.service
 
 ## Huidige service bigben
-[Unit]
-Description=Bigben Python App
-
-[Service]
-ExecStart=/usr/bin/python /home/jsplinter/Documents/Kerstdorp/kerstdorp.py
-Restart=always
-User=root
-Group=root
-
-[Install]
+[Unit]<br>
+Description=Bigben Python App<br>
+<br>
+[Service]<br>
+ExecStart=/usr/bin/python /home/jsplinter/Documents/Kerstdorp/kerstdorp.py<br>
+Restart=always<br>
+User=root<br>
+Group=root<br>
+<br>
+[Install]<br>
 WantedBy=multi-user.target
