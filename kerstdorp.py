@@ -36,7 +36,7 @@ class KerstdorpSound:
 
         xmas = True if self.month_day in PARTY_LIST else False
 
-        if self.minutes != 0:
+        if self.minutes == 0:
             self.random_list() if xmas else None
             system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/hourlychimebeg.wav')
             system(f'aplay -D hw:2,0 {WORK_DIR}BigBen/bigbenstrikes{self.hours}.wav')
